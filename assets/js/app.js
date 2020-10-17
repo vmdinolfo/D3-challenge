@@ -75,13 +75,13 @@ d3.csv("assets/data/data.csv").then(function(censusData) {
     // Add SVG text element and text attributes
     // text to circle from stack overflow https://stackoverflow.com/questions/13615381/d3-add-text-to-circle
 
-    var textLables = chartGroup.selectAll("text")
+    var textLables = chartGroup.selectAll(null)
     .data(censusData)
     .enter()
     .append("text")
     .text(c => c.abbr)
     .attr("dx", c => xLinearScale(c.poverty) - 8)
-    .attr("dy", c => yLinearScale(c.healthcare) + 3 )
+    .attr("dy", c => yLinearScale(c.healthcare) + 3)
     .attr("font-size", "11px")
     .style("fill","White")
     .attr("font-weight", "bold");
